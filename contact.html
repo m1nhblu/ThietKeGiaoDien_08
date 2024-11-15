@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Replica SHOP</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style-1.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/css/style.css">
+    <link rel="stylesheet" href="assets/css/css/style-1.css">
+</head>
+
+<body>
+    <header><input type="checkbox" id="toggler" name=""><label class="fas fa-bars" for="toggler"></label><a href="#" class="logo">ReplicaShop<span>.</span></a>
+        <nav class="navbar"><a href="index.html">Trang chủ</a><a href="about.html">Về chúng tôi</a><a href="products.html">Sản phẩm</a><a href="review.html">Đánh giá</a><a href="contact.html">Liên hệ</a></nav>
+        <div class="icons"><a href="cart.html" class="fas fa-shopping-cart"></a><a href="login" class="fas fa-user"></a></div>
+    </header>
+    <section class="contact" id="contact">
+        <h1 class="heading"><span> Liên hệ </span> chúng tôi </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="well well-sm">
+                        <form class="form-horizontal" action="" method="post" style="margin-left: 226px;padding-right: 228px;margin-right: -255px;">
+                            <fieldset>
+                                <div class="form-group"><label class="col-md-3 control-label" for="name">Name</label>
+                                    <div class="col-md-9"><input class="form-control form-control" type="text" id="name" name="name" placeholder="Tên của bạn" style="width: 417.344px;margin-right: 237px;padding-right: 0px;padding-left: 0px;"></div>
+                                </div>
+                                <div class="form-group"><label class="col-md-3 control-label" for="email">Your E-mail</label>
+                                    <div class="col-md-9"><input class="form-control form-control" type="text" id="email" name="email" placeholder="Email" style="width: 417.344px;margin-right: 237px;padding-right: 0px;padding-left: 0px;"></div>
+                                </div>
+                                <div class="form-group"><label class="col-md-3 control-label" for="message">Your message</label>
+                                    <div class="col-md-9"><textarea class="form-control form-control" id="message" name="message" placeholder="Nhập tin nhắn của bạn" rows="5" style="margin-right: 237px;width: 417.344px;padding-right: 0px;padding-left: 0px;"></textarea></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 text-right"><button class="btn btn-primary btn-lg" type="submit" style="margin-right: 311px;color: rgb(0,0,0);background: rgb(255,255,255);border-color: rgb(0,0,0);margin-left: 164px;">Gửi</button></div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="database" style="margin-top:20px;"></div><script>
+        var data = []; // Khai báo mảng trong javascript
+
+        // Check trùng id
+        function checkID(id){
+            var list = this.data;
+            for (var i = 0; i < list.length; i++){
+                if (list[i].id == id) {
+                    return true;
+                }
+            }
+        }
+
+        // Check chưa nhập thông tin
+        function checkInfo(){
+            var id = document.getElementById('id').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            if (id && name && email && phone) {
+                return true;
+            }else{
+                alert('Vui lòng nhập đầy đủ thông tin trước khi thêm!');
+            }
+        }
+
+        // Thêm mới 
+        function Add(){
+            var id = document.getElementById('id').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            var item = {
+                id     :  id,
+                name   :  name,
+                email  :  email,
+                phone  :  phone
+            };
+
+            if (checkID(id)) {
+                alert("ID đã tồn tại, vui lòng nhập ID khác!");
+            }else if(checkInfo()){
+                this.data.push(item);
+                console.log(data);
+                View();
+            }
+        }
+
+        // Hiển thị 
+        function View(){
+            var list = this.data;
+
+            // Xử lý cộng chuỗi thành html - table
+            var datas = '<table border="1" cellpadding="5"><tr><td>Id</td><td>Name</td><td>Phone</td><td>Email</td><td>Action</td></tr>';
+            for (var i = 0; i < list.length; i++){
+                
+                datas += "<tr>";
+                datas += "<td>" + list[i].id + "</td>"; 
+                datas += "<td>" + list[i].name + "</td>"; 
+                datas += "<td>" + list[i].phone + "</td>"; 
+                datas += "<td>" + list[i].email + "</td>"; 
+                datas += "<td><button onclick='Deletes(" + list[i].id + ")'>Xóa</button>";
+                datas += "</tr>";
+            }
+            datas += '</table>';
+
+            if (list.length != 0) {
+                document.getElementById('database').innerHTML = datas;
+            }else{
+                document.getElementById('database').innerHTML = 'Dữ liệu trống!';
+            }
+        
+        }
+
+        //  theo id
+        function Deletes(id){
+            var list = this.data;
+            var check = confirm("Bạn có muốn xóa  không?");
+
+            if(check){
+                for (var i = 0; i < list.length; i++){
+                    if (list[i].id == id) {
+                        list.splice(i, 1);
+                    }
+                }
+            }
+            View(); // gọi hàm hiển thị
+        }
+
+        // Refresh
+        function Refresh(){
+            document.getElementById('id').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+        }
+
+    </script>
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Truy cập nhanh</h3><a href="#">Trang chủ</a><a href="#">Về chúng tôi</a><a href="#">Sản phẩm</a><a href="#">Đánh giá</a><a href="#">Liên hệ</a>
+                </div>
+                <div class="box">
+                    <h3>Liên kết thêm</h3><a href="#">Tài khoản</a><a href="#">Đơn hàng</a><a href="#">Yêu thích</a><a href="policy.html">Chính sách đổi trả</a>
+                </div>
+                <div class="box">
+                    <h3>Vị trí</h3><a href="#">Ấn Độ</a><a href="#">Mỹ</a><a href="#">Nhật</a><a href="#">Việt Nam</a>
+                </div>
+                <div class="box">
+                    <h3>Thông tin liên lạc</h3><a href="#">+123-456-7890</a><a href="#">example@gmail.com</a><a href="#">Gò Vấp, TP.HCM - 400000</a><img src="assets/img/payment.png" alt="">
+                </div>
+            </div>
+            <div class="credit"><span> Copyright © 2024&nbsp;</span><span> by ReplicaShop </span><span> | all rights reserved </span></div>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
