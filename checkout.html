@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Replica SHOP</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style-1.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/css/style.css">
+    <link rel="stylesheet" href="assets/css/css/style-1.css">
+</head>
+
+<body>
+    <header><input type="checkbox" id="toggler" name=""><label class="fas fa-bars" for="toggler"></label><a href="#" class="logo">ReplicaShop<span>.</span></a>
+        <nav class="navbar"><a href="index.html">Trang chủ</a><a href="about.html">Về chúng tôi</a><a href="products.html">Sản phẩm</a><a href="review.html">Đánh giá</a><a href="contact.html">Liên hệ</a></nav>
+        <div class="icons"><a href="cart.html" class="fas fa-shopping-cart"></a><a href="login.html" class="fas fa-user"></a></div>
+    </header>
+    <main role="main" style="height: 681.25px;border-color: rgb(0,0,0);">
+        <div class="container mt-4">
+            <div class="text-center py-5"><i class="fas fa-credit-card fa-4x" aria-hidden="true"></i>
+                <h2>Thanh toán</h2>
+                <p class="lead">Vui lòng kiểm tra thông tin Khách hàng và Giỏ hàng trước khi Đặt hàng.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Giỏ hàng</span><span class="badge badge-secondary badge-pill">2</span></h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Jordan 1s</h6><small class="text-muted">x2</small>
+                            </div><span class="text-muted">$999</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Jordan 1s</h6><small class="text-muted">x 1</small>
+                            </div><span class="text-muted">$999</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between"><span>Tổng thành tiền</span><strong>$1998</strong></li>
+                    </ul>
+                    <div class="input-group"><input class="form-control form-control" type="text" placeholder="Mã khuyến mãi" style="width: 85px;height: 32px;"><button class="btn btn-primary" type="button" style="width: 97.891px;border-radius: 0;font-size: 6px;margin: 0px 0px 0px -1px;border-color: rgb(0,0,0);border-right-color: rgb(0,0,0);">Áp dụng</button></div>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Thông tin khách hàng</h4>
+                    <div class="row">
+                        <div class="col-md-12 mb-3"><label for="kh_ten">Họ tên</label><input type="text" class="form-control" id="kh_ten" placeholder="Họ tên khách hàng" readonly=""></div>
+                        <div class="col-md-12 mb-3"><label for="kh_gioitinh">Giới tính</label><input type="text" class="form-control" id="kh_gioitinh" placeholder="Giới tính" readonly=""></div>
+                        <div class="col-md-12 mb-3"><label for="kh_diachi">Địa chỉ</label><input type="text" class="form-control" id="kh_diachi" placeholder="Địa chỉ" readonly=""></div>
+                        <div class="col-md-12 mb-3"><label for="kh_dienthoai">Điện thoại</label><input type="text" class="form-control" id="kh_dienthoai" placeholder="Số điện thoại" readonly=""></div>
+                        <div class="col-md-12 mb-3"><label for="kh_email">Email</label><input type="text" class="form-control" id="kh_email" placeholder="Email" readonly=""></div>
+                        <div class="col-md-12 mb-3"><label for="kh_ngaysinh">Ngày sinh</label><input type="text" class="form-control" id="kh_ngaysinh" placeholder="Ngày sinh" readonly=""></div>
+                    </div>
+                    <h4 class="mb-3">Hình thức thanh toán</h4>
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio"><input type="radio" class="custom-control-input" id="httt-1" name="httt_ma" value="1"><label class="custom-control-label" for="httt-1">Tiền mặt</label></div>
+                        <div class="custom-control custom-radio"><input type="radio" class="custom-control-input" id="httt-2" name="httt_ma" value="2"><label class="custom-control-label" for="httt-2">Chuyển khoản</label></div>
+                        <div class="custom-control custom-radio"><input type="radio" class="custom-control-input" id="httt-3" name="httt_ma" value="3"><label class="custom-control-label" for="httt-3">Ship COD</label></div>
+                    </div>
+                    <hr class="mb-4"><button class="btn btn-primary btn-lg btn-block" type="button" style="width: 155px;margin-bottom: 16px;color: rgb(0,0,0);background: rgb(255,255,255);border-color: rgb(0,0,0);">Đặt hàng</button><button class="btn btn-primary btn-lg btn-block" type="button" style="margin: 8px 0px 16px;width: 155px;margin-bottom: 15px;background: rgb(255,255,255);color: rgb(0,0,0);border-color: rgb(0,0,0);"><a href="index.html" style="color: rgb(0,0,0);">Trở về</a></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Truy cập nhanh</h3><a href="#">Trang chủ</a><a href="#">Về chúng tôi</a><a href="#">Sản phẩm</a><a href="#">Đánh giá</a><a href="#">Liên hệ</a>
+            </div>
+            <div class="box">
+                <h3>Liên kết thêm</h3><a href="#">Tài khoản</a><a href="#">Đơn hàng</a><a href="#">Yêu thích</a><a href="policy.html">Chính sách đổi trả</a>
+            </div>
+            <div class="box">
+                <h3>Vị trí</h3><a href="#">Ấn Độ</a><a href="#">Mỹ</a><a href="#">Nhật</a><a href="#">Việt Nam</a>
+            </div>
+            <div class="box">
+                <h3>Thông tin liên lạc</h3><a href="#">+123-456-7890</a><a href="#">example@gmail.com</a><a href="#">Gò Vấp, TP.HCM - 400000</a><img src="assets/img/payment.png" alt="">
+            </div>
+        </div>
+        <div class="credit"><span> Copyright © 2024&nbsp;</span><span> by ReplicaShop </span><span> | all rights reserved </span></div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
